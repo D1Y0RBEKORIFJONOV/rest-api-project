@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	_ "github.com/lib/pq" // Import the PostgreSQL driver
+	_ "github.com/lib/pq" 
 	"github.com/spf13/viper"
 )
 
@@ -15,7 +15,7 @@ type DB struct {
 func (db *DB) ConnectDB() error {
 	viper.SetConfigFile("internal/postgres/config.yaml")
 	if err := viper.ReadInConfig(); err != nil {
-		return err // Return the actual error instead of nil
+		return err 
 	}
 
 	connStr := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
